@@ -14,11 +14,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+    // self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    // self.window.rootViewController = self.viewController;
+    // [self.window makeKeyAndVisible];
+    
+    // UIScreen *screen = [UIScreen mainScreen]; // Get the main screen
+    // CGRect viewRect = [screen bounds]; // Get the bounds of screen
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
+    // UIWindow *window = [[UIWindow alloc] initWithFrame:viewRect]; // Allocate memory for a UI Window and initialize object with frame size to the boundo of the main screen.
+    self.window = [[UIWindow alloc] initWithFrame:viewRect];
+    UIViewController *colorTouchVC = [[UIViewController alloc] init];
+    UIView *colorView = [[UIView alloc] initWithFrame:viewRect]; // Create a view the size of the whole screen.
+    colorView.backgroundColor = [UIColor yellowColor]; // Look up the UIColor class to change color.
+    colorTouchVC.view = colorView;
+    self.window.rootViewController = colorTouchVC; // This ViewController gets control of the window.
+    [self.window makeKeyAndVisible]; // Means it should receive all keyboard & non-touch events.
+    NSLog(@"Screen is %f tall and %f wide", viewRect.size.height, viewRect.size.width);
+    
     return YES;
 }
 
