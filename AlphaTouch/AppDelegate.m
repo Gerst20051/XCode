@@ -15,6 +15,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Called when the application is launched.
+    // (BOOL)                                 application:(UIApplication *)application
+    //                      didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    // Description:                            MethodName:(ParameterTypes *)ParameterNames
+    
     // self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     // self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
