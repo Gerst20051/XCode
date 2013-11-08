@@ -36,9 +36,10 @@
     colorTouchVC.view = colorView;
     self.window.rootViewController = colorTouchVC; // This ViewController gets control of the window.
     [self.window makeKeyAndVisible]; // Means it should receive all keyboard & non-touch events.
-    NSLog(@"Screen is %f tall and %f wide", viewRect.size.height, viewRect.size.width);
+    NSLog(@"Screen is %f tall and %f wide", viewRect.size.height, viewRect.size.width); // Log to the console.
     
-    return YES;
+    NSLog(@"Application Did Finish Launching");
+    return YES; // Means we want to continue launching the application.
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
